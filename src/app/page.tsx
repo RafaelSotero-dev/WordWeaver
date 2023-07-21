@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </aside>
 
-        <div className="p-8 prose prose-invert">
+        <div className="p-8">
           <EditorComponent />
         </div>
       </section>
