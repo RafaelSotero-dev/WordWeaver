@@ -17,6 +17,7 @@ export default function Home() {
         lg:pl-0
         lg:max-w-[60.249rem]
         lg:min-h-[calc(100vh-4rem)]
+        lg:items-start
         lg:grid
         lg:grid-cols-[230px_1fr]
         lg:rounded
