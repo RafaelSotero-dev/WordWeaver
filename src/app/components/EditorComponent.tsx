@@ -59,26 +59,62 @@ const EditorComponent = () => {
             <ToggleGroup.Item
               value="bold"
               onClick={() => editor.chain().focus().toggleBold().run()}
+              data-active={editor.isActive('bold')}
+              className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
             >
-              <BubbleButton data-active={editor.isActive('bold')}>
-                <RxFontBold className="w-4 h-4" />
-              </BubbleButton>
+              <RxFontBold className="w-4 h-4" />
             </ToggleGroup.Item>
             <ToggleGroup.Item
               value="italic"
               onClick={() => editor.chain().focus().toggleItalic().run()}
+              data-active={editor.isActive('italic')}
+              className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
             >
-              <BubbleButton data-active={editor.isActive('italic')}>
-                <RxFontItalic className="w-4 h-4" />
-              </BubbleButton>
+              <RxFontItalic className="w-4 h-4" />
             </ToggleGroup.Item>
             <ToggleGroup.Item
               value="code"
               onClick={() => editor.chain().focus().toggleCode().run()}
+              data-active={editor.isActive('code')}
+              className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
             >
-              <BubbleButton data-active={editor.isActive('code')}>
-                <RxCode className="w-4 h-4" />
-              </BubbleButton>
+              <RxCode className="w-4 h-4" />
             </ToggleGroup.Item>
           </ToggleGroup.Root>
         </BubbleMenu>
@@ -87,7 +123,6 @@ const EditorComponent = () => {
         <FloatingMenu
           editor={editor}
           tippyOptions={{ duration: 100 }}
-
           shouldShow={({ state }) => {
             const { $from } = state.selection
             const currentLineText = $from.nodeBefore?.textContent
