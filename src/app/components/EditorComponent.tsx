@@ -10,7 +10,6 @@ import {
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import StarterKit from '@tiptap/starter-kit'
 import { initialContent } from '../utils/initialContent'
-import BubbleButton from './BubbleButton'
 import { RxFontBold, RxFontItalic, RxCode } from 'react-icons/rx'
 import { lowlight } from 'lowlight'
 import typescript from 'highlight.js/lib/languages/typescript'
