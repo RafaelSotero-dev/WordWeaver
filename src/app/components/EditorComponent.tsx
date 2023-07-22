@@ -11,15 +11,27 @@ import 'highlight.js/styles/base16/dracula.css'
 import Placeholder from '@tiptap/extension-placeholder'
 import { Menu } from './Menu'
 import { MenuFloating } from './MenuFloating'
+import Image from '@tiptap/extension-image'
+import Underline from '@tiptap/extension-underline'
+import Code from '@tiptap/extension-code'
+import CodeBlock from '@tiptap/extension-code-block'
+import Link from '@tiptap/extension-link'
 
 lowlight.registerLanguage('typescript', typescript)
 
 const EditorComponent = () => {
   const editor = useEditor({
     extensions: [
+      Code,
+      CodeBlock,
+      Image,
+      Underline,
       StarterKit,
       CodeBlockLowlight.configure({
         lowlight,
+      }),
+      Link.configure({
+        openOnClick: true,
       }),
       Placeholder.configure({
         placeholder: ({ node }) => {
@@ -43,7 +55,7 @@ const EditorComponent = () => {
     <>
       {editor && <Menu editor={editor} />}
       {editor && <MenuFloating editor={editor} />}
-      <EditorContent editor={editor} className='prose prose-invert' />
+      <EditorContent editor={editor} className='prose prose-invert prose-p:m-1 prose-h1:mb-4 prose-h2:my-6 prose-h3:my-4' />
     </>
   )
 }
