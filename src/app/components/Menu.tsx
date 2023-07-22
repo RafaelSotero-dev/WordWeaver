@@ -6,6 +6,9 @@ import {
   RxFontItalic,
   RxLink1,
   RxStrikethrough,
+  RxTextAlignCenter,
+  RxTextAlignLeft,
+  RxTextAlignRight,
   RxUnderline,
 } from 'react-icons/rx'
 
@@ -21,6 +24,70 @@ export function Menu({ editor }: Props) {
       className="bg-zinc-700 shadow-xl border border-zinc-600 shadow-black/20 rounded-lg overflow-hidden flex"
     >
       <ToggleGroup.Root className="flex items-center" type="single">
+
+      <ToggleGroup.Item
+          value="left"
+          onClick={() => editor.chain().focus().setTextAlign('left').run()}
+          data-active={editor.isActive({ textAlign: 'left' })}
+          className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
+        >
+          <RxTextAlignLeft className="w-4 h-4" />
+        </ToggleGroup.Item>
+
+        <ToggleGroup.Item
+          value="center"
+          onClick={() => editor.chain().focus().setTextAlign('center').run()}
+          data-active={editor.isActive({ textAlign: 'center' })}
+          className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
+        >
+          <RxTextAlignCenter className="w-4 h-4" />
+        </ToggleGroup.Item>
+
+        <ToggleGroup.Item
+          value="right"
+          onClick={() => editor.chain().focus().setTextAlign('right').run()}
+          data-active={editor.isActive({ textAlign: 'right' })}
+          className={`
+              p-2
+              text-zinc-200
+              text-sm
+              flex
+              items-center
+              gap-1.5
+              font-medium
+              leading-none
+              hover:text-zinc-50
+              hover:bg-zinc-400
+              transition-colors
+              data-[active=true]:text-orange-600`}
+        >
+          <RxTextAlignRight className="w-4 h-4" />
+        </ToggleGroup.Item>
+
         <ToggleGroup.Item
           value="bold"
           onClick={() => editor.chain().focus().toggleBold().run()}

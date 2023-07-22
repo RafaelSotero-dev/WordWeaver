@@ -16,6 +16,7 @@ import Underline from '@tiptap/extension-underline'
 import Code from '@tiptap/extension-code'
 import CodeBlock from '@tiptap/extension-code-block'
 import Link from '@tiptap/extension-link'
+import TextAlign from '@tiptap/extension-text-align'
 
 lowlight.registerLanguage('typescript', typescript)
 
@@ -27,6 +28,9 @@ const EditorComponent = () => {
       Image,
       Underline,
       StarterKit,
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
+      }),
       CodeBlockLowlight.configure({
         lowlight,
       }),
